@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>水底世界作品集</title>
+  <!-- 引入 Google Fonts - Pacifico 字體 -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <!-- 引用本地 p5.js 庫 -->
+  <script src="libraries/p5.min.js"></script>
+  <style>
+    body { margin: 0; padding: 0; overflow: hidden; background-color: #001b44; }
+    canvas { display: block; }
+    
+    /* Iframe 彈出視窗容器 */
+    #portfolio-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: none; /* 預設隱藏 */
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+    }
+
+    #iframe-wrapper {
+      width: 80%;
+      height: 80%;
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .close-btn {
+      margin-top: 20px;
+      padding: 10px 25px;
+      background: #00d4ff;
+      border: none;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 1.1em;
+    }
+
+    /* 標題樣式 */
+    #main-title {
+      position: absolute;
+      top: 5%; /* 調整標題位置，使其在水面上方 */
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Pacifico', cursive; /* 使用藝術字體 */
+      font-size: 4em; /* 調整字體大小 */
+      color: #ADD8E6; /* 淺藍色，模擬水面反光 */
+      text-shadow: 0 0 15px rgba(173, 216, 230, 0.8), 0 0 25px rgba(173, 216, 230, 0.6); /* 發光效果 */
+      z-index: 100; /* 確保標題在氣泡和背景之上 */
+      white-space: nowrap; /* 防止文字換行 */
+    }
+  </style>
+</head>
+<body>
+  <div id="portfolio-overlay">
+    <div id="iframe-wrapper">
+      <iframe id="project-frame" src=""></iframe>
+    </div>
+    <button class="close-btn" onclick="closeProject()">返回水底世界</button>
+  </div>
+
+  <h1 id="main-title">水底世界作品集</h1>
+
+  <script src="sketch.js"></script>
+</body>
+</html>
